@@ -35,6 +35,10 @@
         android:title="@string/menu_list_mode" />
 
     <item
+        android:id="@+id/menu_privacy"
+        android:title="改变隐私状态"/>
+
+    <item
         android:id="@+id/menu_share"
         android:title="@string/menu_share"/>
 

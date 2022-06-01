@@ -534,6 +534,10 @@ public class NoteEditActivity extends Activity implements OnClickListener,
                 mWorkingNote.setCheckListMode(mWorkingNote.getCheckListMode() == 0 ?
                         TextNote.MODE_CHECK_LIST : 0);
                 break;
+            case R.id.menu_privacy:
+                Toast toastCenter = Toast.makeText(getApplicationContext(),"居中对齐",Toast.LENGTH_SHORT);
+                toastCenter.show();
+                break;
             case R.id.menu_share:
                 getWorkingText();
                 sendTo(this, mWorkingNote.getContent());
