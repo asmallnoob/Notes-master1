@@ -537,6 +537,9 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
         Intent intent = new Intent(this, NoteEditActivity.class);
         intent.setAction(Intent.ACTION_VIEW);
         intent.putExtra(Intent.EXTRA_UID, data.getId());
+        //打开文件方法
+        Toast toastCenter = Toast.makeText(getApplicationContext(),"获取note的ID,记得删除"+String.valueOf(data.getId()),Toast.LENGTH_SHORT);
+        toastCenter.show();
         this.startActivityForResult(intent, REQUEST_CODE_OPEN_NODE);
     }
 
@@ -903,7 +906,7 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
                         if (item.getType() == Notes.TYPE_FOLDER
                                 || item.getType() == Notes.TYPE_SYSTEM) {
                             openFolder(item);
-                        } else if (item.getType() == Notes.TYPE_NOTE) {
+                        } else if (item.getType() == Notes.TYPE_NOTE) {//在这加对隐私状态的判断,插眼
                             openNode(item);
                         } else {
                             Log.e(TAG, "Wrong note type in NOTE_LIST");

@@ -535,8 +535,11 @@ public class NoteEditActivity extends Activity implements OnClickListener,
                         TextNote.MODE_CHECK_LIST : 0);
                 break;
             case R.id.menu_privacy:
-                Toast toastCenter = Toast.makeText(getApplicationContext(),"居中对齐",Toast.LENGTH_SHORT);
+                Toast toastCenter = Toast.makeText(getApplicationContext(),"改变隐私状态",Toast.LENGTH_SHORT);
                 toastCenter.show();
+                Intent intent = new Intent(NoteEditActivity.this, checkpassword.class);
+                startActivityForResult(intent,1);
+
                 break;
             case R.id.menu_share:
                 getWorkingText();
@@ -870,8 +873,20 @@ public class NoteEditActivity extends Activity implements OnClickListener,
     private void showToast(int resId) {
         showToast(resId, Toast.LENGTH_SHORT);
     }
-
     private void showToast(int resId, int duration) {
         Toast.makeText(this, resId, duration).show();
+    }
+    @Override
+    public void  onActivityResult(int requestCode,int resultCode, Intent data) {
+        NoteEditActivity.super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if (resultCode == 1) {
+                Toast.makeText(NoteEditActivity.this, "输入的密码正确",
+                        Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(NoteEditActivity.this, "输入的密码错误",
+                        Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
