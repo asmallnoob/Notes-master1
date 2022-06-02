@@ -1,12 +1,12 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:18:1-152:12
-INJECTED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:18:1-152:12
-INJECTED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:18:1-152:12
-INJECTED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:18:1-152:12
-INJECTED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:18:1-152:12
-INJECTED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:18:1-152:12
-INJECTED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:18:1-152:12
+ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:18:1-154:12
+INJECTED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:18:1-154:12
+INJECTED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:18:1-154:12
+INJECTED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:18:1-154:12
+INJECTED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:18:1-154:12
+INJECTED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:18:1-154:12
+INJECTED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:18:1-154:12
 	package
 		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:20:5-31
 		INJECTED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml
@@ -74,7 +74,7 @@ ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:34:5
 	android:name
 		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:34:22-78
 application
-ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:36:5-151:19
+ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:36:5-153:19
 	android:label
 		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:38:9-41
 	android:icon
@@ -211,35 +211,39 @@ activity#net.micode.notes.ui.checkpassword
 ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:127:9-128:20
 	android:name
 		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:127:19-51
+activity#net.micode.notes.ui.resetpassword
+ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:129:9-130:20
+	android:name
+		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:129:19-51
 activity#net.micode.notes.ui.AlarmAlertActivity
-ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:129:9-134:20
+ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:131:9-136:20
 	android:label
-		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:131:13-45
+		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:133:13-45
 	android:launchMode
-		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:132:13-48
+		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:134:13-48
 	android:theme
-		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:133:13-75
+		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:135:13-75
 	android:name
-		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:130:13-50
+		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:132:13-50
 activity#net.micode.notes.ui.NotesPreferenceActivity
-ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:136:9-141:20
+ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:138:9-143:20
 	android:label
-		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:138:13-54
+		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:140:13-54
 	android:launchMode
-		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:139:13-43
+		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:141:13-43
 	android:theme
-		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:140:13-60
+		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:142:13-60
 	android:name
-		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:137:13-71
+		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:139:13-71
 service#net.micode.notes.gtask.remote.GTaskSyncService
-ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:143:9-146:19
+ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:145:9-148:19
 	android:exported
-		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:145:13-37
+		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:147:13-37
 	android:name
-		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:144:13-74
+		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:146:13-74
 meta-data#android.app.default_searchable
-ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:148:9-150:52
+ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:150:9-152:52
 	android:value
-		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:150:13-49
+		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:152:13-49
 	android:name
-		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:149:13-58
+		ADDED from D:\AndroidProject\Notes-master1\app\src\main\AndroidManifest.xml:151:13-58

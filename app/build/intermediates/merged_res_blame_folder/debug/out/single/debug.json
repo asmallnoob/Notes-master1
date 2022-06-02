@@ -256,6 +256,10 @@
         "source": "D:\\AndroidProject\\Notes-master1\\app\\src\\main\\res\\drawable-hdpi\\edit_green.9.png"
     },
     {
+        "merged": "D:\\AndroidProject\\Notes-master1\\app\\build\\intermediates\\merged_res\\debug\\layout_resetpassword.xml.flat",
+        "source": "D:\\AndroidProject\\Notes-master1\\app\\src\\main\\res\\layout\\resetpassword.xml"
+    },
+    {
         "merged": "D:\\AndroidProject\\Notes-master1\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_list_yellow_single.9.png.flat",
         "source": "D:\\AndroidProject\\Notes-master1\\app\\src\\main\\res\\drawable-hdpi\\list_yellow_single.9.png"
     },

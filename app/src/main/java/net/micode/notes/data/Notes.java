@@ -165,6 +165,7 @@ public class Notes {
          * <P> Type : INTEGER (long) </P>
          */
         public static final String VERSION = "version";
+
     }
 
     public interface DataColumns {

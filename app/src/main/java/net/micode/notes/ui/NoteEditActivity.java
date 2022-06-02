@@ -74,6 +74,7 @@ import java.util.regex.Pattern;
 
 public class NoteEditActivity extends Activity implements OnClickListener,
         NoteSettingChangedListener, OnTextViewChangeListener {
+    private long mid;
     private class HeadViewHolder {
         public TextView tvModified;
 
@@ -430,7 +431,7 @@ public class NoteEditActivity extends Activity implements OnClickListener,
         if (id == R.id.btn_set_bg_color) {
             mNoteBgColorSelector.setVisibility(View.VISIBLE);
             findViewById(sBgSelectorSelectionMap.get(mWorkingNote.getBgColorId())).setVisibility(
-                    -                    View.VISIBLE);
+                                       View.VISIBLE);
         } else if (sBgSelectorBtnsMap.containsKey(id)) {
             findViewById(sBgSelectorSelectionMap.get(mWorkingNote.getBgColorId())).setVisibility(
                     View.GONE);
@@ -535,7 +536,10 @@ public class NoteEditActivity extends Activity implements OnClickListener,
                         TextNote.MODE_CHECK_LIST : 0);
                 break;
             case R.id.menu_privacy:
-                Toast toastCenter = Toast.makeText(getApplicationContext(),"改变隐私状态",Toast.LENGTH_SHORT);
+                Intent i = getIntent();
+                mid = i.getLongExtra("noteid",0);
+
+                Toast toastCenter = Toast.makeText(getApplicationContext(),"改变隐私状态,当前的noteid为"+mid,Toast.LENGTH_SHORT);
                 toastCenter.show();
                 Intent intent = new Intent(NoteEditActivity.this, checkpassword.class);
                 startActivityForResult(intent,1);
@@ -883,6 +887,20 @@ public class NoteEditActivity extends Activity implements OnClickListener,
             if (resultCode == 1) {
                 Toast.makeText(NoteEditActivity.this, "输入的密码正确",
                         Toast.LENGTH_SHORT).show();
+                SharedPreferences pref;
+                SharedPreferences.Editor editor;
+                pref = PreferenceManager.getDefaultSharedPreferences(this);
+                int pristate = pref.getInt(mid+"_pri",0);
+                editor = pref.edit();
+                editor.putInt(mid+"_pri",pristate^1);
+                editor.apply();
+                if(pristate == 0){
+                    Toast.makeText(NoteEditActivity.this, "已经由正常状态更改为隐私状态",
+                            Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(NoteEditActivity.this, "已经由隐私状态恢复为正常状态",
+                            Toast.LENGTH_SHORT).show();
+                }
             } else {
                 Toast.makeText(NoteEditActivity.this, "输入的密码错误",
                         Toast.LENGTH_SHORT).show();

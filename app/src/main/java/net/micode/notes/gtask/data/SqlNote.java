@@ -49,7 +49,7 @@ public class SqlNote {
             NoteColumns.NOTES_COUNT, NoteColumns.PARENT_ID, NoteColumns.SNIPPET, NoteColumns.TYPE,
             NoteColumns.WIDGET_ID, NoteColumns.WIDGET_TYPE, NoteColumns.SYNC_ID,
             NoteColumns.LOCAL_MODIFIED, NoteColumns.ORIGIN_PARENT_ID, NoteColumns.GTASK_ID,
-            NoteColumns.VERSION
+            NoteColumns.VERSION,
     };
 
     public static final int ID_COLUMN = 0;
@@ -85,6 +85,8 @@ public class SqlNote {
     public static final int GTASK_ID_COLUMN = 15;
 
     public static final int VERSION_COLUMN = 16;
+
+
 
     private Context mContext;
 

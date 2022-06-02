@@ -69,6 +69,7 @@ public class NoteItemData {
     private int mWidgetType;
     private String mName;
     private String mPhoneNumber;
+    private int PrivacyStatus;//隐私状态
 
     private boolean mIsLastItem;
     private boolean mIsFirstItem;
@@ -91,6 +92,7 @@ public class NoteItemData {
         mType = cursor.getInt(TYPE_COLUMN);
         mWidgetId = cursor.getInt(WIDGET_ID_COLUMN);
         mWidgetType = cursor.getInt(WIDGET_TYPE_COLUMN);
+
 
         mPhoneNumber = "";
         if (mParentId == Notes.ID_CALL_RECORD_FOLDER) {

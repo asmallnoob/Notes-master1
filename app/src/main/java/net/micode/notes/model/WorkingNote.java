@@ -78,7 +78,7 @@ public class WorkingNote {
             NoteColumns.BG_COLOR_ID,
             NoteColumns.WIDGET_ID,
             NoteColumns.WIDGET_TYPE,
-            NoteColumns.MODIFIED_DATE
+            NoteColumns.MODIFIED_DATE,
     };
 
     private static final int DATA_ID_COLUMN = 0;
@@ -317,7 +317,6 @@ public class WorkingNote {
     public int getBgColorId() {
         return mBgColorId;
     }
-
     public int getTitleBgResId() {
         return NoteBgResources.getNoteTitleBgResource(mBgColorId);
     }

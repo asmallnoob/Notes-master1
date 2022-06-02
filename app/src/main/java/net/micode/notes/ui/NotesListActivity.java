@@ -125,6 +125,8 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
 
     private NoteItemData mFocusNoteDataItem;
 
+    private SharedPreferences pref;
+
     private static final String NORMAL_SELECTION = NoteColumns.PARENT_ID + "=?";
 
     private static final String ROOT_FOLDER_SELECTION = "(" + NoteColumns.TYPE + "<>"
@@ -134,6 +136,8 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
 
     private final static int REQUEST_CODE_OPEN_NODE = 102;
     private final static int REQUEST_CODE_NEW_NODE  = 103;
+
+    private NoteItemData mdata;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,8 +151,20 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
         setAppInfoFromRawRes();
     }
 
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 998){
+            if (resultCode == 1){
+                Toast.makeText(NotesListActivity.this, "输入的密码正确",
+                        Toast.LENGTH_SHORT).show();
+                openCheckedNote();
+            }else {
+                Toast.makeText(NotesListActivity.this, "输入的密码错误,无法查看隐私便签",
+                        Toast.LENGTH_SHORT).show();
+            }
+        }
         if (resultCode == RESULT_OK
                 && (requestCode == REQUEST_CODE_OPEN_NODE || requestCode == REQUEST_CODE_NEW_NODE)) {
             mNotesListAdapter.changeCursor(null);
@@ -537,10 +553,29 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
         Intent intent = new Intent(this, NoteEditActivity.class);
         intent.setAction(Intent.ACTION_VIEW);
         intent.putExtra(Intent.EXTRA_UID, data.getId());
+        intent.putExtra("noteid", data.getId());
+        mdata = data ;
         //打开文件方法
         Toast toastCenter = Toast.makeText(getApplicationContext(),"获取note的ID,记得删除"+String.valueOf(data.getId()),Toast.LENGTH_SHORT);
         toastCenter.show();
-        this.startActivityForResult(intent, REQUEST_CODE_OPEN_NODE);
+        pref = PreferenceManager.getDefaultSharedPreferences(this);
+        int privacystatus = pref.getInt(String.valueOf(data.getId())+"_pri",0);
+        if(privacystatus == 0){
+            this.startActivityForResult(intent, REQUEST_CODE_OPEN_NODE);
+        }else {
+            Intent i2 = new Intent(this,checkpassword.class);
+            startActivityForResult(i2,998);
+        }
+    }
+    private void openCheckedNote() {
+        Intent intent = new Intent(this, NoteEditActivity.class);
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.putExtra(Intent.EXTRA_UID, mdata.getId());
+        intent.putExtra("noteid", mdata.getId());
+        //打开文件方法
+        Toast toastCenter = Toast.makeText(getApplicationContext(),"获取note的ID,记得删除"+String.valueOf(mdata.getId()),Toast.LENGTH_SHORT);
+        toastCenter.show();
+            this.startActivityForResult(intent, REQUEST_CODE_OPEN_NODE);
     }
 
     private void openFolder(NoteItemData data) {
@@ -790,7 +825,7 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {//插眼,主页面菜单键
         switch (item.getItemId()) {
             case R.id.menu_new_folder: {
                 showCreateOrModifyFolderDialog(true);
@@ -818,6 +853,11 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
             }
             case R.id.menu_new_note: {
                 createNewNote();
+                break;
+            }
+            case R.id.menu_resetpassword: {
+                Intent intent = new Intent(NotesListActivity.this, resetpassword.class);
+                startActivity(intent);
                 break;
             }
             case R.id.menu_search:

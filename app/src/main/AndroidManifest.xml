@@ -126,6 +126,8 @@
         </receiver>
         <activity android:name=".ui.checkpassword">
         </activity>
+        <activity android:name=".ui.resetpassword">
+        </activity>
         <activity
             android:name=".ui.AlarmAlertActivity"
             android:label="@string/app_name"

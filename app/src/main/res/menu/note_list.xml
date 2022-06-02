@@ -34,6 +34,13 @@
         android:title="@string/menu_setting" />
 
     <item
+        android:id="@+id/menu_new_note"
+        android:title="新建便签" />
+    <item
+        android:id="@+id/menu_resetpassword"
+        android:title="重置密码" />
+
+    <item
         android:id="@+id/menu_search"
         android:title="@string/menu_search"/>
 </menu>
